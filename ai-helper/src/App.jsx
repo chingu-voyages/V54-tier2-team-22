@@ -1,7 +1,13 @@
-import "./App.css";
+import './App.css';
+import Header from './components/header';
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
-  return <></>;
+  return (
+    <ThemeProvider>
+      <Header />
+    </ThemeProvider>
+  );
 }
 
 export default App;
