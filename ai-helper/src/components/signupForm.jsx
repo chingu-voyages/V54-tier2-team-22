@@ -1,8 +1,8 @@
 import GenericBtn from "./genericBtn";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { auth } from "../config/firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth, githubProvider, googleProvider } from "../config/firebase";
+import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 
 
@@ -25,6 +25,28 @@ export default function Signupform() {
         }
     };
 
+    const signInWithGoogle = async () => {
+        try {
+            const result = await signInWithPopup(auth, googleProvider);
+            // console.log(result.user); 
+            alert("Signed in successfully");
+            navigate('/', { replace: true });
+        } catch (error) {
+            console.error("Error signing in with Google:", error.message);
+        }
+    };
+
+    const signInWithGithub = async () => {
+        try {
+            const result = await signInWithPopup(auth, githubProvider);
+            // console.log(result.user); 
+            alert("Signed in successfully");
+            navigate('/', { replace: true });
+        } catch (error) {
+            console.error("Error signing in with Github:", error.message);
+        }
+    };
+
     return (
         // <div className="mt-[5%] flex flex-col justify-start p-12 md:pl-5 md:pt-14 md:pb-4 md:pr-28 gap-4">
         <div className="flex md:w-[65%] w-[85%] h-full flex-col justify-center">
@@ -33,25 +55,25 @@ export default function Signupform() {
                 <h1 className="text-4xl text-[#30865D] mx-auto">Create an Account</h1>
 
                 <div className="">
-                    <a
-                        href="https://google.com"
-                        className="flex justify-center gap-2 border border-black px-3 py-2 rounded-xl"
+                    <button
+                        onClick={signInWithGoogle}
+                        className="flex justify-center gap-2 border border-black px-3 py-2 rounded-xl w-full"
                         target="_blank"
                     >
                         <img src="../../../src/assets/icons8-google.svg" alt="" />
                         <p>Sign in with Google</p>
-                    </a>
+                    </button>
 
                 </div>
                 <div className="">
-                    <a
-                        href="htps://apple.com"
-                        className="flex justify-center gap-2 border border-black px-3 py-2 rounded-xl"
+                    <button
+                        onClick={signInWithGithub}
+                        className="flex justify-center gap-2 border border-black px-3 py-2 rounded-xl w-full"
                         target="_blank"
                     >
-                        <img src="../../../src/assets/icons8-apple.svg" alt="" />
-                        <p>Sign in with Apple</p>
-                    </a>
+                        <img src="../../../src/assets/github.svg" alt="" />
+                        <p>Sign in with Github</p>
+                    </button>
                 </div>
 
                 <div className="flex justify-center text-[#30865D] text-2xl">
