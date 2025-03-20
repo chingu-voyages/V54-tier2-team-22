@@ -1,7 +1,7 @@
-export default function GenericBtn({ text }) {
+export default function GenericBtn({ text, type }) {
     return (
         <>
-            <button className="bg-[#30865D] p-2 text-white text-lg rounded-lg mx-1">{text}</button>
+            <button type={text} className="bg-[#30865D] p-2 text-white text-lg rounded-lg mx-1">{text}</button>
         </>
     )
 }

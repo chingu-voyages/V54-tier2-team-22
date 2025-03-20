@@ -1,11 +1,33 @@
 import GenericBtn from "./genericBtn";
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { auth } from "../config/firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useNavigate } from 'react-router-dom';
+
+
 
 export default function Signupform() {
+
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
+    const handleCreateUserWithEmailAndPassword = async (e) => {
+        e.preventDefault();
+        try {
+            await createUserWithEmailAndPassword(auth, email, password);
+            alert('User created successfully');
+            navigate('/', { replace: true });
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
     return (
         // <div className="mt-[5%] flex flex-col justify-start p-12 md:pl-5 md:pt-14 md:pb-4 md:pr-28 gap-4">
-        <div className="flex md:w-[65%] w-full h-full flex-col justify-center">
+        <div className="flex md:w-[65%] w-[85%] h-full flex-col justify-center">
 
             <div className="flex flex-col gap-5">
                 <h1 className="text-4xl text-[#30865D] mx-auto">Create an Account</h1>
@@ -36,59 +58,65 @@ export default function Signupform() {
                     <p>OR</p>
                 </div>
 
-                <form action="" className="flex flex-col gap-3">
+                <form onSubmit={handleCreateUserWithEmailAndPassword} action="" className="flex flex-col gap-3">
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-2xl text-[#30865D]" htmlFor="">
+                        <label className="text-2xl text-[#30865D]" htmlFor="name">
                             Name
                         </label>
                         <input
                             type="name"
                             className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] text-black"
-                            name=""
+                            name='name'
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
                             placeholder="Enter your name"
-                            id=""
+                            id="name"
                             required
                         />
                     </div>
                     <div className="flex flex-col gap-2">
-                        <label className="text-2xl text-[#30865D]" htmlFor="">
+                        <label className="text-2xl text-[#30865D]" htmlFor="email">
                             Email
                         </label>
                         <input
                             type="email"
                             className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] text-black"
-                            name=""
+                            name="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
-                            id=""
+                            id="email"
                             required
                         />
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-2xl text-[#30865D]" htmlFor="">
+                        <label className="text-2xl text-[#30865D]" htmlFor="password">
                             Password
                         </label>
                         <input
                             type="password"
                             className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] text-black"
-                            name=""
+                            name="password"
                             placeholder="Enter your password"
-                            id=""
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            id="password"
                             required
                         />
                     </div>
 
-                    <GenericBtn text={"Sign up"} />
+                    <GenericBtn text={"Sign up"} type={"submit"} />
                 </form>
                 <div className="flex justify-center">
                     <Link to="/signup">
                         <p className="font-semibold">
                             Have an account?{" "}
-                            <a href="" className="text-[#0F3DDE] font-semibold">
+                            <span className="text-[#0F3DDE] font-semibold cursor-pointer">
                                 {"   "}
-                                Sign up
-                            </a>
+                                Sign in
+                            </span>
                         </p>
                     </Link>
                 </div>
