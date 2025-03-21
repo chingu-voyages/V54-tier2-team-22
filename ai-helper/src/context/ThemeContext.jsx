@@ -27,7 +27,7 @@ export function ThemeProvider({ children }) {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, themeIcon }}>
-      <div className="transition-all duration-500 min-h-screen bg-[url(/public/assets/images/bg-light-theme.png)]  dark:bg-[url(/public/assets/images/bg-dark-theme.png)] pt-[32px] max-xl:pt-[16px] pb-[64px] max-sm:pb-[32px] max-xl:pb-[93px] px-[225px] max-xl:px-[32px] max-sm:px-[16px]  dark:text-white text-black flex flex-col gap-[48px] max-xl:gap-[40px] items-center">
+      <div className=" transition-all duration-500 min-h-screen bg-[url(/public/assets/images/bg-light-theme.png)]  dark:bg-[url(/public/assets/images/bg-dark-theme.png)] pt-[32px] max-xl:pt-[16px]  px-[225px] max-xl:px-[32px] max-sm:px-[16px]  dark:text-Neutral-100 text-Neutral-900 flex flex-col gap-[48px] max-xl:gap-[40px] items-center ">
         {children}
       </div>
     </ThemeContext.Provider>
