@@ -1,21 +1,19 @@
-import './App.css';
-import Footer from './components/Footer';
-import Header from './components/Header/Header';
-import { ThemeProvider } from './context/ThemeContext';
+import { Routes, Route } from 'react-router-dom'
+import Signup from './views/Sign-up'
+import Signin from './views/Sign-in'
+import { Home } from './views/Home'
 
 function App() {
-  return (
-    <ThemeProvider>
-      <Header />
-      <main className="flex-1">
-        <h1 className="dark:text-Neutral-100 text-Neutral-900 font-bold text-[64px] max-sm:text-[40px] tracking-[-1px] leading-[100%] max-w-[510px] max-sm:max-w-[343px] text-center">
-          Get High-Quality AI Answers
-        </h1>
-      </main>
 
-      <Footer />
-    </ThemeProvider>
-  );
+  return (
+    <div>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/signup' element={<Signup />} />
+        <Route path='/signin' element={<Signin />} />
+      </Routes>
+    </div>
+  )
 }
 
-export default App;
+export default App
