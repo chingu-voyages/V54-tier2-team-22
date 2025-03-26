@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { auth, githubProvider, googleProvider } from "../config/firebase";
 import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import GitHub from "../icons/GitHub";
 
 
 
@@ -52,12 +53,12 @@ export default function Signupform() {
         <div className="flex md:w-[65%] w-[85%] h-full flex-col justify-center">
 
             <div className="flex flex-col gap-5">
-                <h1 className="text-4xl text-[#30865D] mx-auto">Create an Account</h1>
+                <h1 className="text-4xl dark:text-Neutral-100 text-Neutral-900 mx-auto">Create an Account</h1>
 
                 <div className="">
                     <button
                         onClick={signInWithGoogle}
-                        className="flex justify-center gap-2 border border-black px-3 py-2 rounded-xl w-full"
+                        className="flex justify-center gap-2 border dark:border-Neutral-100 border-Neutral-900 px-3 py-2 rounded-xl w-full"
                         target="_blank"
                     >
                         <img src="../../../src/assets/icons8-google.svg" alt="" />
@@ -68,27 +69,27 @@ export default function Signupform() {
                 <div className="">
                     <button
                         onClick={signInWithGithub}
-                        className="flex justify-center gap-2 border border-black px-3 py-2 rounded-xl w-full"
+                        className="flex justify-center gap-2 border dark:border-Neutral-100 border-Neutral-900 px-3 py-2 rounded-xl w-full"
                         target="_blank"
                     >
-                        <img src="../../../src/assets/github.svg" alt="" />
+                        <GitHub />
                         <p>Sign in with Github</p>
                     </button>
                 </div>
 
-                <div className="flex justify-center text-[#30865D] text-2xl">
+                <div className="flex justify-center dark:text-Neutral-100 text-Neutral-900 text-2xl">
                     <p>OR</p>
                 </div>
 
                 <form onSubmit={handleCreateUserWithEmailAndPassword} action="" className="flex flex-col gap-3">
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-2xl text-[#30865D]" htmlFor="name">
+                        <label className="text-2xl dark:text-Neutral-100 text-Neutral-900" htmlFor="name">
                             Name
                         </label>
                         <input
                             type="name"
-                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] text-black"
+                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-100 text-Neutral-900"
                             name='name'
                             value={name}
                             onChange={(e) => setName(e.target.value)}
@@ -98,12 +99,12 @@ export default function Signupform() {
                         />
                     </div>
                     <div className="flex flex-col gap-2">
-                        <label className="text-2xl text-[#30865D]" htmlFor="email">
+                        <label className="text-2xl dark:text-Neutral-100 text-Neutral-900" htmlFor="email">
                             Email
                         </label>
                         <input
                             type="email"
-                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] text-black"
+                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-100 text-Neutral-900"
                             name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -114,12 +115,12 @@ export default function Signupform() {
                     </div>
 
                     <div className="flex flex-col gap-2">
-                        <label className="text-2xl text-[#30865D]" htmlFor="password">
+                        <label className="text-2xl dark:text-Neutral-100 text-Neutral-900" htmlFor="password">
                             Password
                         </label>
                         <input
                             type="password"
-                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] text-black"
+                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-100 text-Neutral-900"
                             name="password"
                             placeholder="Enter your password"
                             value={password}

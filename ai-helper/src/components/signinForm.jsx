@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { auth } from "../config/firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
+import GitHub from "../icons/GitHub";
 
 
 export default function Signinform() {
@@ -50,12 +51,12 @@ export default function Signinform() {
         <div className="flex md:w-[65%] w-[85%] h-full flex-col justify-center">
 
             <div className="flex flex-col gap-5">
-                <h1 className="text-4xl text-[#30865D] mx-auto">Welcome Back</h1>
+                <h1 className="text-4xl dark:text-Neutral-100 text-Neutral-900 mx-auto">Welcome Back</h1>
 
                 <div className="">
                     <button
                         onClick={signInWithGoogle}
-                        className="flex justify-center gap-2 border border-black px-3 py-2 rounded-xl w-full"
+                        className="flex justify-center gap-2 border dark:border-Neutral-100 border-Neutral-900 px-3 py-2 rounded-xl w-full"
                         target="_blank"
                     >
                         <img src="../../../src/assets/icons8-google.svg" alt="" />
@@ -66,15 +67,15 @@ export default function Signinform() {
                 <div className="">
                     <button
                         onClick={signInWithGithub}
-                        className="flex justify-center gap-2 border border-black px-3 py-2 rounded-xl w-full"
+                        className="flex justify-center gap-2 border dark:border-Neutral-100 border-Neutral-900 px-3 py-2 rounded-xl w-full"
                         target="_blank"
                     >
-                        <img src="../../../src/assets/github.svg" alt="" />
+                        <GitHub />
                         <p>Sign in with Github</p>
                     </button>
                 </div>
 
-                <div className="flex justify-center text-[#30865D] text-2xl">
+                <div className="flex justify-center dark:text-Neutral-100 text-Neutral-900 text-2xl">
                     <p>OR</p>
                 </div>
 
@@ -82,7 +83,7 @@ export default function Signinform() {
 
 
                     <div className="flex flex-col gap-3">
-                        <label className="text-2xl text-[#30865D]" htmlFor="email">
+                        <label className="text-2xl dark:text-Neutral-100 text-Neutral-900" htmlFor="email">
                             Email
                         </label>
                         <input
@@ -98,12 +99,12 @@ export default function Signinform() {
                     </div>
 
                     <div className="flex flex-col gap-3">
-                        <label className="text-2xl text-[#30865D]" htmlFor="password">
+                        <label className="text-2xl dark:text-Neutral-100 text-Neutral-900" htmlFor="password">
                             Password
                         </label>
                         <input
                             type="password"
-                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] text-black"
+                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-100 text-Neutral-900"
                             name="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}

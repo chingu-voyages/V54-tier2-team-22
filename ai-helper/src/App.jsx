@@ -1,7 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
 import Signup from './views/Sign-up'
 import Signin from './views/Sign-in'
-import Home from './views/Home'
+import { Home } from './views/Home'
 
 function App() {
 
