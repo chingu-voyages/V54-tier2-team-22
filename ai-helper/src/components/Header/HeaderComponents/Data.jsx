@@ -33,7 +33,7 @@ function Data() {
     >
       <DataIcon />
       {isOpen && (
-        <span className=" w-[82px] text-Neutral-600 dark:text-Neutral-300 text-sm absolute left-0  top-[30px]">
+        <span className=" w-[90px] text-Neutral-600 dark:text-Neutral-300 text-sm absolute left-0  top-[30px]">
           {getCurrentDate()}
         </span>
       )}

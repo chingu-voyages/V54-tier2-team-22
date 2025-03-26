@@ -15,7 +15,7 @@ function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="absolute bottom-0 w-full dark:bg-Neutral-900 bg-Neutral-100 border-t border-Neutral-200 dark:border-Neutral-700  px-8 max-sm:px-[16px] ">
+    <footer className=" w-full dark:bg-Neutral-900 bg-Neutral-100 border-t border-Neutral-200 dark:border-Neutral-700  px-8 max-sm:px-[16px] ">
       <div className="flex justify-between items-center  gap-6 max-sm:flex-col pb-4 pt-6">
         <Logo />
 
