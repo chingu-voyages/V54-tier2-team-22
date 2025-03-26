@@ -21,25 +21,25 @@ function Footer() {
 
         {/* Team */}
         <div className="">
-          <h3 className="text-neutral-0 dark:text-neutral-100 text-lg font-bold mb-3 max-sm:text-center">
+          <h3 className="text-Neutral-900 dark:text-Neutral-100 text-lg font-bold mb-3 max-sm:text-center">
             Our Team
           </h3>
           <ul className="grid grid-cols-auto-fit grid-cols-2 md:grid-cols-3  lg:grid-cols-4 lg:gap-3 md:gap-2 ">
             {team.map((member) => (
               <li
                 key={member.github}
-                className="flex items-center  gap-2 hover:bg-neutral-200 dark:hover:bg-neutral-700 p-2 rounded-md transition-colors w-fit"
+                className="flex items-center  gap-2 hover:bg-Neutral-200 dark:hover:bg-Neutral-700 p-2 rounded-md transition-colors w-fit"
               >
                 <a
                   href={`https://github.com/${member.github}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${member.name}'s GitHub Profile`}
-                  className="text-neutral-600 dark:text-neutral-300 hover:text-Orange-500 dark:hover:text-Orange-500"
+                  className="text-Neutral-600 dark:text-Neutral-300 hover:text-Orange-500 dark:hover:text-Orange-500"
                 >
                   <GitHub className="w-5 h-5" />
                 </a>
-                <span className="text-neutral-600 dark:text-neutral-300 text-sm">
+                <span className="text-Neutral-600 dark:text-Neutral-300 text-sm">
                   {member.name}
                 </span>
               </li>
@@ -54,7 +54,7 @@ function Footer() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="PentaGo GitHub Repository"
-            className="flex items-center gap-2 bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 px-4 py-2 rounded-full hover:bg-Orange-500 hover:text-neutral-0 dark:hover:bg-Orange-800 dark:hover:text-neutral-100 transition-colors"
+            className="flex items-center gap-2 bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 px-4 py-2 rounded-full hover:bg-Orange-500 hover:text-Neutral-0 dark:hover:bg-Orange-800 dark:hover:text-Neutral-100 transition-colors"
           >
             <GitHub className="w-5 h-5" />
             <span className="text-sm font-medium">Repo</span>
