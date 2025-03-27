@@ -19,7 +19,7 @@ export default function Signupform() {
         e.preventDefault();
         try {
             await createUserWithEmailAndPassword(auth, email, password);
-            alert('User created successfully');
+            // alert('User created successfully');
             navigate('/', { replace: true });
         } catch (error) {
             console.log(error);
@@ -62,7 +62,7 @@ export default function Signupform() {
                         target="_blank"
                     >
                         <img src="../../../src/assets/icons8-google.svg" alt="" />
-                        <p>Sign in with Google</p>
+                        <p>Sign up with Google</p>
                     </button>
 
                 </div>
@@ -73,7 +73,7 @@ export default function Signupform() {
                         target="_blank"
                     >
                         <GitHub />
-                        <p>Sign in with Github</p>
+                        <p>Sign up with Github</p>
                     </button>
                 </div>
 
@@ -89,8 +89,8 @@ export default function Signupform() {
                         </label>
                         <input
                             type="name"
-                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-100 text-Neutral-900"
-                            name='name'
+                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-900 text-Neutral-100"
+                            name="name"
                             value={name}
                             onChange={(e) => setName(e.target.value)}
                             placeholder="Enter your name"
@@ -104,7 +104,7 @@ export default function Signupform() {
                         </label>
                         <input
                             type="email"
-                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-100 text-Neutral-900"
+                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-900 text-Neutral-100"
                             name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
@@ -120,7 +120,7 @@ export default function Signupform() {
                         </label>
                         <input
                             type="password"
-                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-100 text-Neutral-900"
+                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-900 text-Neutral-100"
                             name="password"
                             placeholder="Enter your password"
                             value={password}
@@ -133,10 +133,10 @@ export default function Signupform() {
                     <GenericBtn text={"Sign up"} type={"submit"} />
                 </form>
                 <div className="flex justify-center">
-                    <Link to="/signup">
+                    <Link to="/signin">
                         <p className="font-semibold">
                             Have an account?{" "}
-                            <span className="text-[#0F3DDE] font-semibold cursor-pointer">
+                            <span className="text-[#bf7df1] font-semibold cursor-pointer">
                                 {"   "}
                                 Sign in
                             </span>

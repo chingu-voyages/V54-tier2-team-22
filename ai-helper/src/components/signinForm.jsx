@@ -17,7 +17,7 @@ export default function Signinform() {
         e.preventDefault();
         try {
             await signInWithEmailAndPassword(auth, email, password);
-            alert('Signed in successfully');
+            // alert('Signed in successfully');
             navigate('/', { replace: true });
         } catch (error) {
             console.error(error);
@@ -88,12 +88,12 @@ export default function Signinform() {
                         </label>
                         <input
                             type="email"
-                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] text-black"
+                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-900 text-Neutral-100"
                             name="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Enter your email"
-                            id=""
+                            id="email"
                             required
                         />
                     </div>
@@ -104,26 +104,26 @@ export default function Signinform() {
                         </label>
                         <input
                             type="password"
-                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-100 text-Neutral-900"
+                            className="border border-[#878787] p-2 rounded-xl bg-[#EDEDED] dark:text-Neutral-900 text-Neutral-100"
                             name="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             placeholder="Enter your password"
-                            id=""
+                            id="password"
                             required
                         />
                     </div>
 
                     <GenericBtn text={"Sign in"} type={"submit"} />
                 </form>
-                <div className="flex justify-center">
-                    <Link to="/signup">
+                <div className="flex justify-center dark:text-Neutral-100 text-Neutral-900">
+                    <Link to="/signup" className="cursor-pointer">
                         <p className="font-semibold">
                             Don't have an account?{" "}
-                            <a href="" className="text-[#0F3DDE] font-semibold">
+                            <span className="text-[#bf7df1] font-semibold">
                                 {"   "}
                                 Sign up
-                            </a>
+                            </span>
                         </p>
                     </Link>
                 </div>
