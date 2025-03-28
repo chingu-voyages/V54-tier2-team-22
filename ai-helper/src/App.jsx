@@ -7,19 +7,30 @@ import Footer from './components/Footer';
 import Header from './components/Header/Header';
 import { GeminiResultProvider } from './context/GeminiResultProvider';
 import { ThemeProvider } from './context/ThemeContext';
+import { Landing } from './views/Landing';
+import { AuthProvider } from './context/AuthProvider';
+import ProtectedRoute from './views/ProtectedRoute';
 
 function App() {
   return (
     <ThemeProvider>
-      <GeminiResultProvider>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/signin" element={<Signin />} />
-        </Routes>
-        <Footer />
-      </GeminiResultProvider>
+      <AuthProvider>
+
+        <GeminiResultProvider>
+          <Header />
+          <Routes>
+            <Route path="/home" element={<Landing />} />
+            <Route path="/" element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            } />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/signin" element={<Signin />} />
+          </Routes>
+          <Footer />
+        </GeminiResultProvider>
+      </AuthProvider>
     </ThemeProvider>
   );
 }
