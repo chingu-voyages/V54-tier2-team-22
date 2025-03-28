@@ -1,10 +1,12 @@
 import GenericBtn from "./genericBtn";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { auth } from "../config/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, googleProvider, githubProvider } from "../config/firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import GitHub from "../icons/GitHub";
+// import { isSignInWithEmailLink, signInWithEmailLink } from "firebase/auth";
+
 
 
 export default function Signinform() {
@@ -16,8 +18,13 @@ export default function Signinform() {
     const handleSignInWithEmailAndPassword = async (e) => {
         e.preventDefault();
         try {
-            await signInWithEmailAndPassword(auth, email, password);
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
             // alert('Signed in successfully');
+            if (!user.emailVerified) {
+                alert("Please verify your email before logging in.");
+                return;
+            }
             navigate('/', { replace: true });
         } catch (error) {
             console.error(error);
@@ -45,6 +52,8 @@ export default function Signinform() {
             console.error("Error signing in with Github:", error.message);
         }
     };
+
+
 
     return (
         // <div className="mt-[5%] flex flex-col justify-start p-12 md:pl-5 md:pt-14 md:pb-4 md:pr-28 gap-4">

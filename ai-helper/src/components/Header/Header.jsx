@@ -19,6 +19,10 @@ function Header() {
         {(currentUrl === '/signin' || currentUrl === '/home') && <SignUpButton />}
         {currentUrl === '/signup' && <SignInButton />}
         {currentUrl === '/' && <SignOutButton />}
+        {currentUrl === '/home' && <div className="">
+          <SignInButton />
+        </div>
+        }
       </div>
     </header>
   );

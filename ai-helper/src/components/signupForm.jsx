@@ -2,9 +2,10 @@ import GenericBtn from "./genericBtn";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { auth, githubProvider, googleProvider } from "../config/firebase";
-import { createUserWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import GitHub from "../icons/GitHub";
+import { sendSignInLinkToEmail } from "firebase/auth";
 
 
 
@@ -19,6 +20,9 @@ export default function Signupform() {
         e.preventDefault();
         try {
             await createUserWithEmailAndPassword(auth, email, password);
+            await sendSignInEmail(email);
+            await signOut(auth);
+
             // alert('User created successfully');
             navigate('/', { replace: true });
         } catch (error) {
@@ -45,6 +49,21 @@ export default function Signupform() {
             navigate('/', { replace: true });
         } catch (error) {
             console.error("Error signing in with Github:", error.message);
+        }
+    };
+
+    const sendSignInEmail = async (email) => {
+        const actionCodeSettings = {
+            url: "http://localhost:5173",
+            handleCodeInApp: true,
+        };
+
+        try {
+            await sendSignInLinkToEmail(auth, email, actionCodeSettings);
+            window.localStorage.setItem("emailForSignIn", email);
+            alert("Check your email for the sign-in link.");
+        } catch (error) {
+            console.error("Error sending sign-in link:", error);
         }
     };
 
