@@ -1,0 +1,29 @@
+.markdown table {
+    @apply border-collapse  ;
+}
+
+.markdown table th,
+td {
+    @apply border-Neutral-200 dark:border-Neutral-700 pt-[6px] pb-[8px] px-[18px] text-start;
+}
+
+.markdown thead tr th:not(:first-of-type),
+.markdown tbody tr td:not(:first-of-type) {
+    @apply border-l;
+}
+
+.markdown thead tr th {
+    @apply border-b;
+}
+
+.markdown tbody tr:not(:last-of-type) {
+    @apply border-b border-Neutral-200 dark:border-Neutral-700;
+}
+
+.markdown table thead tr th {
+    @apply text-Neutral-700 dark:text-Neutral-0 text-[18px] font-medium leading-[150%] tracking-[-0.5px];
+}
+
+.markdown table tbody tr td {
+    @apply text-Neutral-600 dark:text-Neutral-400 text-[16px] leading-[130%] tracking-[-0.2px];
+}
