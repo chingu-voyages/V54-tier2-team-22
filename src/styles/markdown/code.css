@@ -1,0 +1,44 @@
+.markdown pre {
+    @apply border border-Neutral-200 dark:border-Neutral-700 bg-Neutral-200 dark:bg-Neutral-800 rounded-[12px] overflow-x-auto p-[12px] text-Neutral-0;
+}
+
+.markdown code {
+    font-family: 'Fira Code' !important;
+}
+
+code {
+    @apply inline-block p-1 m-1 bg-Neutral-200 dark:bg-Neutral-800 rounded-sm text-[#A138FF] dark:text-[#D390F3];
+}
+
+pre>code  ,  .hljs.language-js .hljs-string {
+    @apply text-[#4B4D65] dark:text-Neutral-0;
+}
+
+.markdown .hljs-tag ,  .hljs-selector-class , .hljs-keyword  {
+    @apply text-[#FF5100] dark:text-[#FC6774];
+}
+
+.markdown .inline-equal {
+    @apply text-Neutral-0;
+}
+
+.markdown .hljs-string , .hljs.language-css , .hljs.language-js  {
+    @apply text-[#1975FB] dark:text-[#68E0FF];
+}
+
+.markdown .hljs-attr , .hljs-attribute ,  .hljs-title.function_  {
+    @apply text-[#A138FF] dark:text-[#D390F3];
+}
+
+.markdown .hljs-comment   {
+    @apply text-Neutral-400 dark:text-Neutral-600;
+}
+
+
+
+
+
+
+
+
+

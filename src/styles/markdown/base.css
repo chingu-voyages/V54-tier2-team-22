@@ -1,0 +1,49 @@
+.markdown {
+    @apply flex flex-col gap-[12px];
+}
+
+.markdown p,
+.markdown li {
+    @apply text-Neutral-600 dark:text-Neutral-400 text-[18px] leading-[150%] tracking-[-0.2px];
+}
+
+.markdown h2,
+.markdown h3,
+.markdown h4 {
+    @apply text-Neutral-700 dark:text-Neutral-0 font-bold text-[28px] leading-[130%] tracking-[-0.5px];
+}
+
+.markdown h3 {
+    @apply text-[24px];
+}
+
+.markdown h4 {
+    @apply text-[20px];
+}
+
+.markdown h5 {
+    @apply text-[18px];
+}
+
+.markdown hr {
+    @apply border-Neutral-200 dark:border-Neutral-700  my-[12px];
+}
+
+.markdown hr:first-of-type {
+    @apply my-[20px] ;
+}
+
+.markdown br {
+    @apply mt-[12px] ;
+}
+
+/* list */
+
+.markdown ol,
+.markdown ul {
+    @apply flex flex-col gap-[12px] list-decimal ps-7;
+}
+
+.markdown ul {
+    @apply list-disc;
+}

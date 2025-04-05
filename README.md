@@ -5,24 +5,25 @@
 - **Tailwind CSS** - Styling
 - **Formik & Yup** - Form handling & validation
 - **React Context API (useContext)** - State management
+- **React Markdown** - Renders Markdown content in React
+- **rehype-highlight** - Adds syntax highlighting to Markdown code blocks
+- **rehype-raw** - Allows raw HTML inside Markdown
+- **rehype-sanitize** - Ensures safe HTML by sanitizing Markdown content
+- **remark-gfm** - Enables GitHub Flavored Markdown (tables, strikethrough, etc.)
 
 ## Our Team
 
 - **Shaimaa #1**: [GitHub](https://github.com/Shaimaa01) / [LinkedIn](https://www.linkedin.com/in/shaimaa-kamel-818bab31b/)
-- **Nati #2**: [GitHub](https://github.com/NatiG25) / [LinkedIn](https://linkedin.com/in/natigebregorgis)
-- **Shemigam1 #3**: [GitHub](https://github.com/ghaccountname) /
+
+- **Shemigam1 #2**: [GitHub](https://github.com/ghaccountname) /
 
 # Style Guide
-
-## Color Palette
-
-### Neutral Colors
 
 #### Light Mode:
 
 - `Neutral-100` - Background primary button
 - `Neutral-200` - Borders
-- `Neutral-600` - Text / Secondary color/   
+- `Neutral-600` - Text / Secondary color/
 - `Neutral-800` - p
 - `Neutral-700` - Darker Text/Elements
 - `Neutral-900` - Headings, Logo
