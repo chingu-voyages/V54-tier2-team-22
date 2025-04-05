@@ -3,13 +3,10 @@ import Logo from './Header/HeaderComponents/Logo';
 
 function Footer() {
   const team = [
-    { name: 'Jim Medlock', github: 'jdmedlock' },
-    { name: 'Shaimaa', github: 'Shaimaa01' },
     { name: 'Ademola Kujore', github: 'Dhemmyhardy' },
     { name: 'QueenHub555', github: 'QueenHub555' },
-    { name: 'Jyotirmoy Das', github: 'jdx-code' },
-    { name: 'Nati Gebregorgis', github: 'NatiG25' },
     { name: 'Oluwasemilore', github: 'shemigam1' },
+    { name: 'Shaimaa', github: 'Shaimaa01' },
   ];
 
   const currentYear = new Date().getFullYear();
