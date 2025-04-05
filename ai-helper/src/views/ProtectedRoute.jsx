@@ -3,7 +3,7 @@ import { useAuth } from "../context/AuthProvider";
 
 const ProtectedRoute = ({ children }) => {
     const { user } = useAuth();
-    return user ? children : <Navigate to="/home" />;
+    return user ? children : <Navigate to="/signin" />;
 };
 
 export default ProtectedRoute;

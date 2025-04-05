@@ -19,7 +19,7 @@ function App() {
         <GeminiResultProvider>
           <Header />
           <Routes>
-            <Route path="/home" element={<Landing />} />
+            {/* <Route path="/home" element={<Landing />} /> */}
             <Route path="/" element={
               <ProtectedRoute>
                 <Home />
