@@ -6,6 +6,7 @@ import SubmitButton from './PentagramComponents/SubmitButton';
 import Label from './PentagramComponents/Label';
 import ResetButton from './PentagramComponents/ResetButton';
 import { useGeminiResult } from '../../context/GeminiResultContext';
+import SuccessIcon from '../../icons/SuccessIcon';
 
 // Validation schema with Yup
 const pentagramSchema = Yup.object().shape({
@@ -56,14 +57,16 @@ function PentagramForm() {
         Constraint: '',
       }}
       validationSchema={pentagramSchema}
-      onSubmit={async (values, { setSubmitting }) => {
+      onSubmit={async (values, { setSubmitting , setStatus  }) => {
         const prompt = `As ${values.Persona}, ${values.Context}, I need ${values.Task}. Please provide ${values.Output}, keeping ${values.Constraint}.`;
         console.log(prompt);
         await fetchResult(prompt);
         setSubmitting(false);
+        setStatus("Your prompt has been successfully submitted!");
+        setTimeout(() => setStatus(null), 6000);
       }}
     >
-      {({ errors, touched, setFieldValue }) => (
+      {({ errors, touched, setFieldValue , status }) => (
         <Form className=" flex flex-col items-center gap-[24px] w-full md:w-3/4">
           <ul className="list-none flex flex-col  gap-[24px] w-full ">
             {Object.keys(fieldDetails).map((field) => (
@@ -90,6 +93,12 @@ function PentagramForm() {
             ))}
           </ul>
           <SubmitButton />
+          {status && (
+                <div className="text-Green-700 dark:text-Green-500 text-[16px] racking-[-0.2px] leading-[130%]  flex items-center gap-[8px] transition-all duration-300">
+                  <SuccessIcon />
+                  <span>{status}</span>
+                </div>
+              )}
         </Form>
       )}
     </Formik>
