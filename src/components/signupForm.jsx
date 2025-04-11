@@ -30,7 +30,7 @@ export default function Signupform() {
         try {
             const result = await signInWithPopup(auth, googleProvider);
             // console.log(result.user); 
-            alert("Signed in successfully");
+            // alert("Signed in successfully");
             navigate('/', { replace: true });
         } catch (error) {
             console.error("Error signing in with Google:", error.message);
@@ -41,7 +41,7 @@ export default function Signupform() {
         try {
             const result = await signInWithPopup(auth, githubProvider);
             // console.log(result.user); 
-            alert("Signed in successfully");
+            // alert("Signed in successfully");
             navigate('/', { replace: true });
         } catch (error) {
             console.error("Error signing in with Github:", error.message);
