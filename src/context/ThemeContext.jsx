@@ -23,7 +23,8 @@ export function ThemeProvider({ children }) {
       );
       document.documentElement.style.setProperty(
         '----placeholder-color',
-        '#E4E4EF'
+         '#E4E4EF'
+           
       );
       setThemeIcon(iconSun);
     } else {
@@ -43,7 +44,7 @@ export function ThemeProvider({ children }) {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme, themeIcon }}>
-      <div className=" transition-all duration-500  bg-[url(/public/assets/images/bg-light-theme.png)]  dark:bg-[url(/public/assets/images/bg-dark-theme.png)]  dark:text-Neutral-100 text-Neutral-900 flex flex-col gap-[48px] max-xl:gap-[40px] items-center ">
+      <div className=" transition-all duration-500  bg-[url(/public/assets/images/bg-light-theme.png)]  dark:bg-[url(/public/assets/images/bg-dark-theme.png)]  dark:text-Neutral-100 text-Neutral-900 flex flex-col gap-[30px] items-center ">
         {children}
       </div>
     </ThemeContext.Provider>
