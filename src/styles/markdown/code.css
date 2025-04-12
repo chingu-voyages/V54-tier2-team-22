@@ -7,7 +7,7 @@
 }
 
 code {
-    @apply inline-block p-1 m-1 bg-Neutral-200 dark:bg-Neutral-800 rounded-sm text-[#A138FF] dark:text-[#D390F3];
+    @apply text-[14px] font-normal inline-block px-2  m-1 bg-Neutral-200 dark:bg-Neutral-800 rounded-sm text-[#A138FF] dark:text-[#D390F3];
 }
 
 pre>code  ,  .hljs.language-js .hljs-string {

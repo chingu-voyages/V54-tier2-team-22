@@ -1,14 +1,16 @@
-function ResetButton({setFieldValue , field}) {
-    return (
-      <button
+import { TrashIcon } from '../../../icons/TrashIcon';
+
+function ResetButton({ field, handleReset }) {
+  return (
+    <button
       type="button"
-      onClick={() => setFieldValue(field, '')}
-       className="flex items-center  bg-neutral-200 dark:bg-neutral-700 text-neutral-700 dark:text-neutral-200 px-4 py-2 rounded-full hover:bg-Orange-500 hover:text-neutral-0 dark:hover:bg-Orange-800 dark:hover:text-neutral-100 transition-colors"
+      onClick={handleReset}
+      className="flex flex-col items-center cursor-pointer   text-neutral-400 dark:text-Neutral-600   hover:text-Red-600  dark:hover:text-Red-400  transition-colors"
       aria-label={`Reset ${field}`}
     >
-      Reset
+      <TrashIcon />
     </button>
-    )
-  }
-  
-  export default ResetButton
+  );
+}
+
+export default ResetButton;
