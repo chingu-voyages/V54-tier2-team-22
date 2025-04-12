@@ -1,8 +1,8 @@
 import GenericBtn from "./genericBtn";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { auth } from "../config/firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth, googleProvider, githubProvider } from "../config/firebase";
+import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import GitHub from "../icons/GitHub";
 
@@ -28,7 +28,7 @@ export default function Signinform() {
         try {
             const result = await signInWithPopup(auth, googleProvider);
             // console.log(result.user); 
-            alert("Signed in successfully");
+            // alert("Signed in successfully");
             navigate('/', { replace: true });
         } catch (error) {
             console.error("Error signing in with Google:", error.message);
@@ -39,7 +39,7 @@ export default function Signinform() {
         try {
             const result = await signInWithPopup(auth, githubProvider);
             // console.log(result.user); 
-            alert("Signed in successfully");
+            // alert("Signed in successfully");
             navigate('/', { replace: true });
         } catch (error) {
             console.error("Error signing in with Github:", error.message);
@@ -56,7 +56,7 @@ export default function Signinform() {
                 <div className="">
                     <button
                         onClick={signInWithGoogle}
-                        className="flex justify-center gap-2 border dark:border-Neutral-100 border-Neutral-900 px-3 py-2 rounded-xl w-full"
+                        className="flex justify-center gap-2 border dark:border-Neutral-100 border-Neutral-900 px-3 py-2 rounded-xl w-full cursor-pointer"
                         target="_blank"
                     >
                         <img src="../../../src/assets/icons8-google.svg" alt="" />

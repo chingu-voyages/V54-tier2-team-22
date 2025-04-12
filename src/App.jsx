@@ -4,6 +4,7 @@ import Signin from './views/Sign-in';
 import { Home } from './views/Home';
 import Footer from './components/Footer';
 import Header from './components/Header/Header';
+import { Landing } from './views/Landing';
 import { GeminiResultProvider } from './context/GeminiResultProvider';
 import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider } from './context/AuthProvider';
@@ -16,7 +17,7 @@ function App() {
         <GeminiResultProvider>
           <Header />
           <Routes>
-            {/* <Route path="/home" element={<Landing />} /> */}
+            <Route path="/home" element={<Landing />} />
             <Route
               path="/"
               element={
