@@ -26,5 +26,4 @@ The AI Helper App is a web-based application designed to assist users in craftin
 - **Shaimaa #1**: [GitHub](https://github.com/Shaimaa01) / [LinkedIn](https://www.linkedin.com/in/shaimaa-kamel-818bab31b/)
 
 - **Shemigam1 #2**: [GitHub](https://github.com/shemigam1) / [LinkedIn](https://www.linkedin.com/in/semilore-omotade-michaels/)
-- 
 - **Ademola Kujore #3**: [GitHub](https://github.com/dhemmyhardy) / [LinkedIn](https://www.linkedin.com/in/tundeademolakujore/)
